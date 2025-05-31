@@ -1,0 +1,26 @@
+export const COMPANY_RESPONSE_MESSAGE = {
+  createSuccess: 'Create company successfully',
+  deleteSuccess: 'Company deleted successfully',
+  deactivateSuccess: 'Company deactivated successfully',
+  createError: 'Create company error',
+  notFound: 'Company not found',
+  getSuccess: 'Get company successfully',
+  getTeamMemberSuccess: 'Get team member successfully',
+  reactivateSuccess: 'The Company has been successfully activated',
+  getError: 'Get company error',
+  updateSuccess: 'Update company successfully',
+  updateAvatarSuccess: 'Update avatar successfully',
+  updateError: 'Update company error',
+  userHasCompany: 'User did register company',
+  companyExists:
+    'A company with this name already exists, please choose a different name',
+  seatHodlerMismatch:
+    'The number of SeatHolders added is more than the seats purchased',
+  roleMismatch: 'There can be only one user with permission : ',
+  endedTrial: 'The trial subscription ended successfully',
+  getTeamMember: 'Get team member successfully',
+  configureLeadMagnet: 'Lead Magnet configure status changed',
+  configureLinkedinInbox: 'Linkedin Inbox configure status changed',
+  customerIdExists: 'Please link Customer ID',
+  addTeamMemberSuccess: 'Add team member successfully',
+};
