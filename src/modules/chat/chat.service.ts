@@ -21,7 +21,6 @@ import {
 import { CompanyService } from 'src/modules/company/services/company.service';
 import { MailgunMessageService } from 'src/modules/mailgun/services/mailgun-message.service';
 import { OpenAiService } from 'src/modules/open-ai/open-ai.service';
-import { UserInterFace } from 'src/modules/user/interface/user.interface';
 import { UserService } from 'src/modules/user/services/user.service';
 
 @Injectable()
@@ -94,12 +93,16 @@ export class ChatService {
     const chatHistory = await this.getMessagesByExternalUserEmail(from);
     const formattedChatHistory = chatHistory.map((chat) => chat.message);
 
+    const allCHhatHistory = await this.messageModel.find();
+    const allFormattedChatHistory = allCHhatHistory.map((chat) => chat.message);
+
     const response = await this.openaiService.create({
       content: `Analyze the chat history and generate a response to the user. Remember you need to act like company consultant. So use "Reach us", "We will help" words etc. You need to emulate human behavior and provide a helpful response. Please don't answer in AI manner
       
       New user message: ${message}
       Company Information: ${company.description}
       Chat History: ${formattedChatHistory}
+      All chats history: ${allFormattedChatHistory}
       `,
     });
 
